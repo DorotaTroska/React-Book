@@ -11,10 +11,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import MovieIcon from '@mui/icons-material/Movie';
-// import { Link } from "react-router-dom";
-// import { authContext } from "../../helpers/authContext";
-// import { auth, storage } from "../../helpers/firebaseConfig";
-// import { getDownloadURL, ref } from "firebase/storage";
+// import { Link } from "react-router-dom";//
+import { authContext } from "../../helpers/authContext";
+import { auth, storage } from "../../helpers/firebaseConfig";
+import { getDownloadURL, ref } from "firebase/storage";
 
 
 const pages = ['Home', 'Search', 'Like'];

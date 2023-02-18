@@ -23,6 +23,16 @@ function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
+  React.useEffect(() => {
+    if (loggedIn && auth.currentUser) {
+      const storageRef = ref(storage, `/users/${auth.currentUser.uid}/profile`);
+      getDownloadURL(storageRef)
+        .then((url) => setProfilePhoto(url))
+        .catch(() => setProfilePhoto(""));
+    }
+  }, [loggedIn]);
+
+
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
